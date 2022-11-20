@@ -53,6 +53,9 @@ class InstallCommand extends Command
         $this->callSilent('vendor:publish', ['--tag' => 'fortify-support', '--force' => true]);
         $this->callSilent('vendor:publish', ['--tag' => 'fortify-migrations', '--force' => true]);
 
+        // Storage...
+        $this->callSilent('storage:link');
+
         // "Home" Route...
         $this->replaceInFile('/home', '/dashboard', app_path('Providers/RouteServiceProvider.php'));
 
@@ -363,6 +366,7 @@ EOF;
             });
 
         $this->installMiddlewareAfter('SubstituteBindings::class', '\App\Http\Middleware\HandleInertiaRequests::class');
+        $this->installMiddlewareAfter('\App\Http\Middleware\HandleInertiaRequests::class', '\Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets::class');
 
         // Models...
         copy(__DIR__.'/../../stubs/app/Models/User.php', app_path('Models/User.php'));
