@@ -1,13 +1,13 @@
 # SYSTEM-DEVT-LAB
 # Technologies used
-Laravel <br>
-Jetstream<br>
+XAMPP v3.3.0<br>
 PHP<br>
-Visual studio code IDE<br>
-MySQL database<br>
-PhpMyadmin backend<br>
-bootstrap<br>
+Laravel 9<br>
+MySQL Database<br>
 HTML<br>
 CSS<br>
-node.js<br>
 JavaScript<br>
+Ajax<br>
+jQuery<br>
+Bootstrap<br>
+AdminLTE<br>
